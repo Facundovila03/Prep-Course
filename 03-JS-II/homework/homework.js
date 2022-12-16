@@ -1,5 +1,6 @@
 // No cambies los nombres de las funciones.
 
+const { arrayReplaceAt } = require("markdown-it/lib/common/utils")
 const { divide } = require("../../02-JS-I/homework/homework")
 
 function obtenerMayor(x, y) {
@@ -186,7 +187,7 @@ function esPrimo(numero) {
   } else {return true}
   
  }pwd
- o
+ 
 }
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
@@ -204,23 +205,33 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  do {
-    for (seis = 0 ; seis == 10 ; seis++){
-      return seis * 6
-    }
-  } while (seis<11);
+ let arraytabaladel6 = []
+ for (let i = 0 ; i < 11 ; i++){
+  arraytabaladel6.push(6*i)
+ }
+ return arraytabaladel6
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if (numero > 99 && numero < 1000){
+    return true
+  }
+  return false
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
-  //Usar el bucle do ... while.
+  //Usar el bucle do ... while
+  do {
+    for (var multiplicador = 0; multiplicador <9 ; multiplicador++){
+      var resultado = multiplicador * numero
+    }
+  } while (multiplicador<9);
+  return resultado
+
 }
 
 
