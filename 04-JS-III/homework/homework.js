@@ -205,10 +205,14 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  if (array.includes(00))
-    var masdecien = 100
-    
-  
+  var z = array
+  var u = []
+  for(i=0 ; i<z.length ; i++){
+    if(z[i]>100){
+        u.push(z[i])
+    }
+  }
+    return u
 }
 
 
@@ -220,6 +224,17 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var z = numero
+  var u = []
+  for(i=0 ; i<10 ; i++){
+    u.push(z +2)
+    z = u[i]
+    if(z == 10){
+      return 'se interrumpio la ejecucion'
+      break;
+    }
+  }
+  return u
 }
 
 
@@ -230,7 +245,22 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var z = numero
+  var u = []
+  for(i=0 ; i<10 ; i++){
+    if(i !== 5){
+      u.push(z +2)
+      z = u[i]
+    }else {
+      u.push(z +0)
+      z = u[i]
+      continue;
+    }
+  }
+  return u
 }
+
+
 
 
 // No modificar nada debajo de esta línea
