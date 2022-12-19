@@ -79,7 +79,13 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  
+    var z = objeto
+    var y = propiedad
+  if (z[y]){
+    console.log('true')
+  } else {
+      return false
+  }
 }
 
 function verificarPassword (usuario, password) {
@@ -87,12 +93,20 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (password === usuario['password']){
+    return true
+  }else {
+    return false
+  }
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
+  usuario.Password = nuevaPassword
+  return usuario
+
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -100,6 +114,8 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
+  usuario['Amigos'].push(nuevoAmigo)
+  return usuario
 }
 
 function pasarUsuarioAPremium (usuarios) {
@@ -108,6 +124,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  for ( i= 0 ; i<usuarios.length ; i++ ){
+    usuarios[i].esPremium = true
+}
+return usuarios
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -117,6 +137,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+  var suma = 0
+  for (i=0; i<usuario.Posts.length ; i++){
+    suma += usuario.Posts[i].Likes
+  }
+  return suma
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -129,7 +154,12 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  producto['MetodoCalculoDescuento'] = function calcularPrecioDescuento(){
+      var descuento = producto.precio * producto.porcentajeDeDescuento
+      producto.precio -= descuento
+      return producto
+    }
+    return producto.MetodoCalculoDescuento()
 }
 
 // No modificar nada debajo de esta línea
